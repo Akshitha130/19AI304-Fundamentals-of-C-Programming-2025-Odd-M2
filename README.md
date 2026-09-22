@@ -2,6 +2,10 @@
 # IAPR-2- Module 2 - FoC
 ## 3. Implementation of programs using conditional statements.
 ## 4. Implementation of programs using various control statements.
+
+
+
+
 # Ex.No:6
   Build a C program to input a student’s marks in three subjects (Math, Science, and English). Calculate the average marks and determine the grade using nested if-else statements with safe floating-point comparisons based on the following grading criteria:
     
@@ -15,7 +19,7 @@
   
   The program should display the average marks up to two decimal places and the corresponding grade. 
   
-# Date : 
+
 # Aim:
  To build a C program that receives inputs for a student’s marks in three subjects, calculates the average, and determines the grade using nested if-else statements with safe floating-point comparisons.
 # Algorithm:
@@ -55,16 +59,103 @@
   Else, print Grade F.
 ### Step 11:
   Stop
+
+
+
+
+
+  
 # Program:
+
+
+
+
+
+
+
+
+```
+#include <stdio.h>
+
+int main()
+{
+    float math, science, english, average;
+
+    printf("Enter marks in Math, Science and English: ");
+    scanf("%f %f %f", &math, &science, &english);
+
+    average = (math + science + english) / 3.0f;
+
+    printf("Average Marks: %.2f\n", average);
+
+    if (average >= 90.0f)
+    {
+        printf("Grade: A");
+    }
+    else
+    {
+        if (average >= 75.0f)
+        {
+            printf("Grade: B");
+        }
+        else
+        {
+            if (average >= 50.0f)
+            {
+                printf("Grade: C");
+            }
+            else
+            {
+                printf("Grade: F");
+            }
+        }
+    }
+
+    return 0;
+}
+
+
+```
+
+
+
+
+
+
+
 # Output:
+
+
+
+
+
+
+
+
+
+
+<img width="846" height="414" alt="WhatsApp Image 2026-09-22 at 10 03 57 PM" src="https://github.com/user-attachments/assets/030cd14c-0ba3-418e-9264-3a0bc300d34a" />
+
+
+
+
+
+
+
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
+
+
+
 
 # 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
 # IAPR-2- Module 2 - FoC
 # Ex.No:7
   Develop a C program to display the multiplication table of a given number (15) up to 10.
-# Date : 
+
+
 # Aim:
  To develop a C program that prints the multiplication table of the number 15 up to 10 using a for loop.
 # Algorithm:
@@ -87,16 +178,83 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 6: 
   Stop
 
+
+
+
+  
+
 # Program:
+
+
+
+
+
+
+```
+#include <stdio.h>
+
+int main()
+{
+    int number = 15;
+    int i;
+
+    for (i = 1; i <= 10; i++)
+    {
+        printf("%d x %d = %d\n", number, i, number * i);
+    }
+
+    return 0;
+}
+
+```
+
+
+
+
+
+
 # Output:
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="837" height="575" alt="WhatsApp Image 2026-09-22 at 10 06 46 PM" src="https://github.com/user-attachments/assets/94b4fcd8-14db-4e89-9039-c8b2263e91ba" />
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
+
+
+
+
+
+
+
 
 # 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
 # IAPR-2- Module 2 - FoC
 # Ex.No:8
   Develop a C program to check whether a given number is prime or not.
-# Date : 
+
 # Aim:
  To develop a C program that determines whether an input number is a prime number using a while loop.
 # Algorithm:
@@ -130,8 +288,81 @@ Thus, the program was implemented and executed successfully, and the required ou
   Else, print that the number is not prime.
 ### Step 7:   
   Stop
+
+
+
+
+  
 # Program:
+
+
+
+
+
+
+
+
+```
+
+#include <stdio.h>
+
+int main()
+{
+    int n, i = 2, f = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (n <= 1)
+    {
+        f = 1;
+    }
+    else
+    {
+        while (i <= n - 1)
+        {
+            if (n % i == 0)
+            {
+                f = 1;
+                break;
+            }
+            i++;
+        }
+    }
+
+    if (f == 0)
+        printf("%d is a prime number", n);
+    else
+        printf("%d is not a prime number", n);
+
+    return 0;
+}
+
+```
+
+
+
+
 # Output:
+
+
+
+
+
+
+
+
+<img width="1080" height="339" alt="WhatsApp Image 2026-09-22 at 10 09 26 PM" src="https://github.com/user-attachments/assets/0f31e2d6-e090-4206-af14-5e6dcf3e9ce7" />
+
+
+
+
+
+
+
+
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -147,7 +378,9 @@ Thus, the program was implemented and executed successfully, and the required ou
  4   2  
  54321
  ```
-# Date : 
+
+
+ 
 # Aim:
  To build a C program that prints the required numeric pattern for a given value of n using nested loops.
 # Algorithm:
@@ -178,8 +411,86 @@ Thus, the program was implemented and executed successfully, and the required ou
   Increase i and repeat Step 6.
 ### Step 8:   
   Stop
+
+
+
+  
 # Program:
+
+
+
+
+
+```
+
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j, n, k;
+
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++)
+    {
+        for (j = i; j <= n; j++)
+        {
+            if (i == 1 || j == i)
+                printf("%d", j);
+            else
+                printf(" ");
+        }
+
+        k = j - 2;
+
+        for (j = 1; j < i; j++)
+        {
+            if (i == n || j == i - 1)
+                printf("%d", k);
+            else
+                printf(" ");
+
+            k--;
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+
+```
+
+
+
+
+
+
 # Output:
+
+
+
+
+
+
+
+<img width="1080" height="525" alt="WhatsApp Image 2026-09-22 at 10 13 12 PM" src="https://github.com/user-attachments/assets/3b307aca-9572-438a-9b6a-f50f781f0cf1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -232,6 +543,85 @@ Thus, the program was implemented and executed successfully, and the required ou
   Decrease i by 1 and go back to Step 6.
 ### Step 8:
   Stop
+
+
+
+
+# Program
+
+
+
+
+
+
+```
+#include <stdio.h>
+
+int main()
+{
+    int i, j;
+
+    printf("0\n");
+
+    for (i = 7; i >= 1; i--)
+    {
+        for (j = i; j <= 7; j++)
+        {
+            printf("%d ", j);
+        }
+
+        printf("0 ");
+
+        for (j = 7; j >= i; j--)
+        {
+            printf("%d ", j);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+```
+
+
+
+
+
+
+# Output
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1080" height="625" alt="WhatsApp Image 2026-09-22 at 10 15 38 PM" src="https://github.com/user-attachments/assets/7c5b06b5-ccae-4b62-995a-638337a772bb" />
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Result:
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
